@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Historic</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!------ Include the above in your HEAD tag ---------->
+    <script type="text/javascript">
+    /**********************Scroll Animation "START"************************************/
+    $(document).ready(function() {
+        var $animation_elements = $('.anim');
+        var $window = $(window);
+
+        function check_if_in_view() {
+            var window_height = $window.height();
+            var window_top_position = $window.scrollTop();
+            var window_bottom_position = (window_top_position + window_height);
+
+            $.each($animation_elements, function() {
+                var $element = $(this);
+                var element_height = $element.outerHeight();
+                var element_top_position = $element.offset().top;
+                var element_bottom_position = (element_top_position + element_height);
+
+                //check to see if this current container is within viewport
+                if ((element_bottom_position >= window_top_position) &&
+                    (element_top_position <= window_bottom_position)) {
+                    $element.addClass('animated');
+                } else {
+                    $element.removeClass('animated');
+                }
+            });
+        }
+
+        $window.on('scroll resize', check_if_in_view);
+        $window.trigger('scroll');
+    });
+    /**********************Scroll Animation "END"************************************/
+
+    /**********************Change color of center aligned animated content small Circle  "START"************************************/
+    $(document).ready(function() {
+        $(" .debits").hover(function() {
+            $(" .center-right").css("background-color", "#4997cd");
+        }, function() {
+            $(" .center-right").css("background-color", "#fff");
+        });
+    });
+    $(document).ready(function() {
+        $(".credits").hover(function() {
+            $(".center-left").css("background-color", "#4997cd");
+        }, function() {
+            $(".center-left").css("background-color", "#fff");
+        });
+    });
+    /**********************Change color of center aligned animated content small Circle  "END"************************************/
+    </script>
+</head>
+
+<body>
+    <section class="historic">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="timeline">
+                    <div class="row timeline-movement timeline-movement-top">
+                        <div class="timeline-badge timeline-future-movement">
+                            <p>2017</p>
+                        </div>
+                    </div>
+                    <div class="row timeline-movement">
+                        <div class="timeline-badge center-left">
+                        </div>
+                        <div class="col-sm-6  timeline-item">
+                            <div class="row">
+                                <div class="col-sm-11">
+                                    <div class="timeline-panel credits  anim animate fadeInLeft">
+                                        <ul class="timeline-panel-ul">
+                                            <div class="lefting-wrap">
+                                                <li class="img-wraping"><a href="#"><img style="height: 110px;" src="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/02/image4.jpeg" class="img-responsive" alt="user-image" /></a></li>
+                                            </div>
+                                            <div class="righting-wrap">
+                                                <li><span class="causale" style="color:#000; font-weight: 600;">Création du club</span> </li>
+                                                <li><span class="causale" style="font-size: small;">Le Triathlon Club du Lauragais a été créé par une équipe de 4 personnes à la base copains, copines depuis quelques années. L'idée vient de Nicolas et Damien qui font du triathlon depuis 6 ans et qui voulaient mettre en place un club de triathlon dans le Lauragais.</span></li>
+                                                <li>
+                                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>13/09/2017</small></p>
+                                                </li>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row timeline-movement timeline-movement-top">
+                        <div class="timeline-badge timeline-future-movement">
+                            <p>2018</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

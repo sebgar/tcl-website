@@ -1,0 +1,26 @@
+hr {
+    border-top: 1px solid #000 !important;
+    width: 50% !important;
+}
+
+a {
+    color: #000 !important;
+}
+
+a:link {
+    text-decoration: none !important;
+}
+
+#author a {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}

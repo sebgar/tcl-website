@@ -1,0 +1,20 @@
+	.page.page-one-column .entry-header,
+	.twentyseventeen-front-page.page-one-column .entry-header,
+	.archive.page-one-column:not(.has-sidebar) .page-header {
+		margin-bottom: 1em;
+	}
+
+	/* Layout */
+
+	.wrap {
+		max-width: 2000px;
+		padding-left: 3em;
+		padding-right: 3em;
+	}
+
+	/* Posts */
+
+	.site-content {
+	  padding: 1.5em 0 0;
+	}
+
