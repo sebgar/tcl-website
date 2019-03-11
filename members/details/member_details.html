@@ -5,13 +5,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Member</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <!------ Include the above in your HEAD tag ---------->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var userId = 0;
+
+        successResponse = function(data) {
+            $("#username").html(data[userId]["Nom d'utilisateur"]);
+            $("#fistname").html(data[userId]["Prénom"]);
+            $("#lastname").html(data[userId]["Nom"]);
+            $("#age").html(data[userId]["Ton âge"]);
+            $("#nickname").html(data[userId]["Surnom(s)"]);
+            $("#location").html(data[userId]["Ville d'habitation"]);
+            $("#origin").html(data[userId]["Ville d'origine"]);
+            $("#base-sport").html(data[userId]["Sport(s) d'origine"]);
+            $("#tri-started").html(data[userId]["Age de début du tri"]);
+            $("#job").html(data[userId]["Professionnel (Ce que tu fais en dehors du sport, diplôme dans le sport...)"]);
+            $("#sport-career").html(data[userId]["Sportif (Comment tu es arrivé au tri)"]);
+            $("#hobbies").html(data[userId]["Mes passions"]);
+            $("#favorite-sport").html(data[userId]["Ta discipline préférée"]);
+            $("#favorite-workout").html(data[userId]["Entrainements préférés"]);
+            $("#worse-workout").html(data[userId]["Entrainements que je déteste"]);
+            $("#favorite-distance").html(data[userId]["Distance de prédilection"]);
+            $("#best-souvenir").html(data[userId]["Meilleur souvenir en tri"]);
+            $("#worst-souvenir").html(data[userId]["Mon plus mauvais souvenir"]);
+            $("#major-objective").html(data[userId]["Tes objectifs majeurs"]);
+            $("#schedule-event").html(data[userId]["Ton calendrier avec les courses que tu prévois de faire entres tes objectifs majeurs"]);
+            $("#personal-records").html(data[userId]["Records (tes temps de références)"]);
+            $("#proud-victory").html(data[userId]["Tes exploits dont tu es le plus fier"]);
+        }
+
+        $.ajax({
+            type: 'GET',
+            url: "https://gist.githubusercontent.com/jluccisano/06bd69cd86ac37582e31f5ec6251db08/raw/d5ff924bcbf54054bc6c0e00ad7dd3443acf6b37/gistfile1.json",
+            dataType: 'json',
+            crossDomain: true,
+            success: successResponse,
+        });
+    });
+    </script>
 </head>
 
 <body>
@@ -24,227 +62,152 @@
                         <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar rounded-circle img-thumbnail" alt="avatar">
                         <h3>Joseph Luccisano</h3>
                     </div>
-                    </hr>
-                    <br>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
-                        <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://facebook.com"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://instagram.com"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://pinterest.com"><i class="fab fa-strava"></i></a></li>
+                        </ul>
                     </div>
                     <ul class="list-group">
-                        <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+                        <li class="list-group-item"><span class="pull-left"><strong>Age: </strong></span><span id="age"></span></li>
+                        <li class="list-group-item"><span class="pull-left"><strong>Début du Tri: </strong></span><span id="tri-started"></span></li>
+                        <li class="list-group-item"><span class="pull-left"><strong>Surnom: </strong></span><span id="nickname"></span></li>
+                        <li class="list-group-item"><span class="pull-left"><strong>Ville: </strong></span><span id="location"></span></li>
+                        <li class="list-group-item"><span class="pull-left"><strong>Originaire: </strong></span><span id="origin"></span></li>
+                        <li class="list-group-item"><span class="pull-left"><strong>Sport d'origine: </strong></span><span id="base-sport"></span></li>
                     </ul>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Social Media</div>
-                        <div class="panel-body">
-                            <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
-                        </div>
-                    </div>
                 </div>
                 <!--/col-3-->
                 <div class="col-sm-9">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Home</a></li>
-                        <li class="nav-item" ><a class="nav-link" data-toggle="tab" href="#messages">Menu 1</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings">Menu 2</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="home">
-                            <hr>
-                            <form class="form" action="##" method="post" id="registrationForm">
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="first_name">
-                                            <h4>First name</h4></label>
-                                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="last_name">
-                                            <h4>Last name</h4></label>
-                                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="phone">
-                                            <h4>Phone</h4></label>
-                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="mobile">
-                                            <h4>Mobile</h4></label>
-                                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Email</h4></label>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Location</h4></label>
-                                        <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="password">
-                                            <h4>Password</h4></label>
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="password2">
-                                            <h4>Verify</h4></label>
-                                        <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                                    </div>
-                                </div>
-                            </form>
-                            <hr>
+                    <!-- Nav tabs -->
+                    <nav>
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Bio</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Palmarès</a>
+                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Objectifs 2019</a>
                         </div>
-                        <!--/tab-pane-->
-                        <div class="tab-pane" id="messages">
-                            <h2></h2>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <h3>Parcours</h3>
                             <hr>
-                            <form class="form" action="##" method="post" id="registrationForm">
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="first_name">
-                                            <h4>First name</h4></label>
-                                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="last_name">
-                                            <h4>Last name</h4></label>
-                                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="phone">
-                                            <h4>Phone</h4></label>
-                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="mobile">
-                                            <h4>Mobile</h4></label>
-                                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Email</h4></label>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Location</h4></label>
-                                        <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="password">
-                                            <h4>Password</h4></label>
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="password2">
-                                            <h4>Verify</h4></label>
-                                        <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                                    </div>
-                                </div>
-                            </form>
+                            <dl class="row">
+                                <dt class="col-sm-3">Professionnel</dt>
+                                <dd class="col-sm-9" id="job"></dd>
+                                <dt class="col-sm-3">Sportif</dt>
+                                <dd class="col-sm-9">
+                                    <p id="sport-career"></p>
+                                </dd>
+                                <dt class="col-sm-3">Mes Passions</dt>
+                                <dd class="col-sm-9">
+                                    <p id="hobbies"></p>
+                                </dd>
+                            </dl>
+                            <h3>Entrainements & compétitions</h3>
+                            <hr>
+                            <dl class="row">
+                                <dt class="col-sm-3">Ta discipline préférée</dt>
+                                <dd class="col-sm-9" id="favorite-sport"></dd>
+                                <dt class="col-sm-3">Entrainements préférés</dt>
+                                <dd class="col-sm-9">
+                                    <p id="favorite-workout"></p>
+                                </dd>
+                                <dt class="col-sm-3">Entrainements que je déteste</dt>
+                                <dd class="col-sm-9">
+                                    <p id="worse-workout"></p>
+                                </dd>
+                                <dt class="col-sm-3">Distance de prédilection</dt>
+                                <dd class="col-sm-9">
+                                    <p id="favorite-distance"></p>
+                                </dd>
+                                <dt class="col-sm-3">Autres sports pratiqués</dt>
+                                <dd class="col-sm-9">
+                                    <p>TODO</p>
+                                </dd>
+                                <dt class="col-sm-3">Anecdotes</dt>
+                                <dd class="col-sm-9">
+                                    <p>TODO</p>
+                                </dd>
+                                <dt class="col-sm-3">Meilleur souvenir en tri</dt>
+                                <dd class="col-sm-9">
+                                    <p id="best-souvenir"></p>
+                                </dd>
+                                <dt class="col-sm-3">Mon plus mauvais souvenir</dt>
+                                <dd class="col-sm-9">
+                                    <p id="worst-souvenir"></p>
+                                </dd>
+                            </dl>
                         </div>
-                        <!--/tab-pane-->
-                        <div class="tab-pane" id="settings">
-                            <hr>
-                            <form class="form" action="##" method="post" id="registrationForm">
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="first_name">
-                                            <h4>First name</h4></label>
-                                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="last_name">
-                                            <h4>Last name</h4></label>
-                                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="phone">
-                                            <h4>Phone</h4></label>
-                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="mobile">
-                                            <h4>Mobile</h4></label>
-                                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Email</h4></label>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Location</h4></label>
-                                        <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="password">
-                                            <h4>Password</h4></label>
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="password2">
-                                            <h4>Verify</h4></label>
-                                        <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                                    </div>
-                                </div>
-                            </form>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Finisher Marathon de Toulouse
+                                    <span class="badge badge-primary badge-pill">Oct. 2019</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    7ème triathlon de toulouse en équipe
+                                    <span class="badge badge-primary badge-pill">Jui. 2019</span>
+                                </li>
+                            </ul>
+                            <div class="palmares-table">
+                                <table class="table" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Distance</th>
+                                            <th>Temps</th>
+                                            <th>Année</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Course à pied</td>
+                                            <td>1000m</td>
+                                            <td>3'00</td>
+                                            <td>2003</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Course à pied</td>
+                                            <td>5km</td>
+                                            <td>20'37</td>
+                                            <td>2017</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Course à pied</td>
+                                            <td>10km</td>
+                                            <td>43'12</td>
+                                            <td>2017</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Course à pied</td>
+                                            <td>Marathon</td>
+                                            <td>4h18</td>
+                                            <td>2017</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Marathon de Toulouse
+                                    <span class="badge badge-primary badge-pill">Oct. 2019</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Half du Lauragais
+                                    <span class="badge badge-primary badge-pill">Jui. 2019</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <!--/tab-pane-->
                 </div>
-                <!--/tab-content-->
             </div>
-            <!--/col-9-->
+            <!--/tab-content-->
+        </div>
+        <!--/col-9-->
         </div>
         <!--/row-->
     </section>

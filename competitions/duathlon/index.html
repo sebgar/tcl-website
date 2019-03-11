@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript">
+    </script>
+</head>
+
+<body>
+    <section id="menu">
+        <div class="row">
+            <div class="col-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Accueil</a>
+                    <a class="nav-link" id="v-pills-sinscrire-tab" data-toggle="pill" href="#v-pills-sinscrire" role="tab" aria-controls="v-pills-profile" aria-selected="false">S'inscrire</a>
+                    <a class="nav-link" id="v-pills-plan-tab" data-toggle="pill" href="#v-pills-plan" role="tab" aria-controls="v-pills-profile" aria-selected="false">Plan</a>
+                    <a class="nav-link" id="v-pills-programme-tab" data-toggle="pill" href="#v-pills-programme" role="tab" aria-controls="v-pills-messages" aria-selected="false">Programme</a>
+                    <a class="nav-link" id="v-pills-parcours-tab" data-toggle="pill" href="#v-pills-parcours" role="tab" aria-controls="v-pills-parcours" aria-selected="false">Parcours</a>
+                    <a class="nav-link" id="v-pills-reglement-tab" data-toggle="pill" href="#v-pills-reglement" role="tab" aria-controls="v-pills-reglement" aria-selected="false">Règlement</a>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <div class="row justify-content-md-center">
+                            <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/02/FLYER-DUATHLON-TCL-1.png" class="rounded" width="60%" height="50%">
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-sinscrire" role="tabpanel" aria-labelledby="v-pills-sinscrire-tab">
+                        <section id="pricing" class="pricing-table">
+                            <div class="container">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-5 col-lg-4">
+                                        <div class="item">
+                                            <div class="ribbon">100 équipes</div>
+                                            <div class="heading">
+                                                <h3>Duathlon Relais</h3>
+                                            </div>
+                                            <p>Relais avec 2 ou 3 coureurs</p>
+                                            </br>
+                                            <div class="features">
+                                                <h4><span class="feature">CAP 1</span> : <span class="value">2km</span></h4>
+                                                <h4><span class="feature">Vélo</span> : <span class="value">6km</span></h4>
+                                                <h4><span class="feature">CAP2</span> : <span class="value">1km</span></h4>
+                                            </div>
+                                            <div class="price">
+                                                <h4>40€</h4>
+                                                <p>par équipe</p>
+                                            </div>
+                                            <a class="btn btn-block btn-primary" data-toggle="modal" data-target="#registrationModal" href='#'>S'inscrire</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-lg-4">
+                                        <div class="item">
+                                            <div class="ribbon">100 équipes</div>
+                                            <div class="heading">
+                                                <h3>Duathlon Famille</h3>
+                                            </div>
+                                            <p>Relais avec 3 coureurs dont 1 de moins de 15 ans obligatoirement, né entre 2004 et 2009 inclus</p>
+                                            <div class="features">
+                                                <h4><span class="feature">CAP 1</span> : <span class="value">2km</span></h4>
+                                                <h4><span class="feature">Vélo</span> : <span class="value">6km</span></h4>
+                                                <h4><span class="feature">CAP2</span> : <span class="value">1km</span></h4>
+                                            </div>
+                                            <div class="price">
+                                                <h4>30€</h4>
+                                                <p>par équipe</p>
+                                            </div>
+                                            <a class="btn btn-block btn-primary" data-toggle="modal" data-target="#registrationModal" href='#'>S'inscrire</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-lg-4">
+                                        <div class="item">
+                                            <div class="heading">
+                                                <div class="ribbon">100 enfants</div>
+                                                <h3>Animation Enfant</h3>
+                                            </div>
+                                            <p>Enfants nés entre 2007 et 2011</p>
+                                            </br>
+                                            </br>
+                                            </br>
+                                            </br>
+                                            <div class="features">
+                                                <h4><span class="feature">CAP</span> : <span class="value">800m</span></h4>
+                                            </div>
+                                            <div class="price">
+                                                <h4>Gratuit</h4>
+                                            </div>
+                                            <a class="btn btn-block btn-danger disabled" href='#'>Inscription sur place uniquement</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="block-heading">
+                                    <p>(1) Pour participer à cette épreuve les concurrents doivent soit être licenciés auprès de la FFTRI. Pour les non licenciés FFTRI, la réglementation FFTRi prévoit de s’inscrire en souscrivant un Pass compétition pour la journée.
+                                        <a target="_blank" href="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/02/Règlement-Duathlon-du-Pastel-2019.pdf">+infos</a>.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="tab-pane fade show active" id="v-pills-plan" role="tabpanel" aria-labelledby="v-pills-plan-tab">
+                        <div class="row justify-content-md-center">
+                            <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/03/Screen-Shot-2019-03-01-at-11.18.04.png" class="rounded" width="70%" height="60%">
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-programme" role="tabpanel" aria-labelledby="v-pills-programme-tab">
+                        <div class="container mt-5 mb-5">
+                            <div class="row">
+                                <div class="col-md-9 offset-md-1">
+                                    <h4>Programme</h4>
+                                    <ul class="timeline">
+                                        <li class=timeline>
+                                            <a href="#">Fin des incrcriptions sur internet</a>
+                                            <a href="#" class="float-right">Vendredi 21 avril 2019 22h</a>
+                                            <p> Il sera toutefois possible de s’inscrire le matin de la course à compter de 7h30 jusqu’à 9h</p>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://www.totoprayogo.com/#">Retrait des dossards </a>
+                                            <a href="#" class="float-right">Samedi 20 avril 10h à 19h</a>
+                                            <p>Le retrait des dossards se fera le Samedi 20 avril de 10h à 19h au centre du Village des Marques de Nailloux où le jour de l’épreuve à partir de 8h30.
+                                                Pour retirer le dossard de l’équipe vous devrez obligatoirement vous munir des documents suivants :
+                                                <ul>
+                                                    <li>
+                                                        votre justificatif d’inscription</li>
+                                                    <li>une pièce d’identité</li>
+                                                </ul>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <a href="#">Retrait des dossards</a>
+                                            <a href="#" class="float-right">7h30</a>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <a href="#">Ouverture parc à vélo</a>
+                                            <a href="#" class="float-right">8h00</a>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <a href="#">Briefing du Duathlon du Pastel</a>
+                                            <a href="#" class="float-right">8h45</a>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <a href="#">Départ du Duathlon du Pastel</a>
+                                            <a href="#" class="float-right">9h00</a>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <a href="#">Briefing du Duathlon Famille</a>
+                                            <a href="#" class="float-right">10h45</a>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <a href="#">Départ du Duathlon Famille</a>
+                                            <a href="#" class="float-right">11h00</a>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <a href="#">Départ de la course enfants</a>
+                                            <a href="#" class="float-right">12h00</a>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <a href="#">Retrait des vélos</a>
+                                            <a href="#" class="float-right">12h00</a>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <a href="#">Remise des récompenses</a>
+                                            <a href="#" class="float-right">13h00</a>
+                                            <p>Pour chaque course des récompenses pour les 3 premières équipes de chaque catégorie
+                                                (mixte, féminin, masculin) seront distribués.
+                                                Un cadeau sera offert à chaque concurrent avec l’inscription, de même pour l’animation enfants
+                                                Un challenge entreprise sera également mis en place et récompensera la meilleure équipe d’entreprise
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-parcours" role="tabpanel" aria-labelledby="v-pills-parcours-tab">
+                        <div class="container">
+                            <div class="row">
+                                <h2>CAP 1</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <iframe width="450px" height="580px" src="https://www.openrunner.com/route/9597526/embed/fr/686a614c756363415147767256636a613043535248503845474559732f6c4a507632542f766d566c456a733d3a3a9296982e6dee344f766d1f51cbd1ece2" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-4">
+                                    <p>Relayeur 1 (Duathlon Famille)</p>
+                                    <p>CAP 1 (Duathlon du Pastel)</p>
+                                </div>
+                            </div>
+                        </div>
+                        </hr>
+                        <div class="container">
+                            <div class="row">
+                                <h2>Vélo</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <iframe width="450px" height="580px" src="https://www.openrunner.com/route/9597535/embed/fr/4f422b50644a4e5968563158483370394d594a49316c556c624d6b42736a3957626e6d6f654853674b4b453d3a3ae84bba14903b73a898e9554690257ce0" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-4">
+                                    <p>Relayeur 2 (Duathlon Famille)</p>
+                                    <p>Vélo (Duathlon du Pastel)</p>
+                                </div>
+                            </div>
+                        </div>
+                        </hr>
+                        <div class="container">
+                            <div class="row">
+                                <h2>CAP 2 1er et 2eme relayeurs</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <iframe width="450px" height="580px" src="https://www.openrunner.com/route/9597548/embed/fr/6f66754d324d4232584d7955436d387a5a684949775a302f73334d30716b4d5649307751456868627051343d3a3a3cbfc12084fe06611b638fb1f0509562" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-4">
+                                    <p>Relayeur 3 (Duathlon Famille)</p>
+                                    <p>Vélo (Duathlon du Pastel)</p>
+                                </div>
+                            </div>
+                        </div>
+                        </hr>
+                        <div class="container">
+                            <div class="row">
+                                <h2>CAP2 3eme relayeur</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <iframe width="450px" height="580px" src="https://www.openrunner.com/route/9597561/embed/fr/2f4f3846682b6f414e34596e6f32306a52334c57574b6c576a6548344d684a555a312b5547534e6e6c79493d3a3ace55a28c97eaf298f3f714cfbe8a1fe1" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-4">
+                                    <p>Relayeur 3 (Duathlon Famille)</p>
+                                </div>
+                            </div>
+                        </div>
+                        </hr>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-reglement" role="tabpanel" aria-labelledby="v-pills-reglement-tab">
+                        <a class="btn btn-block btn-primary" href='http://triathlonclubdulauragais.fr/wp-content/uploads/2019/02/Règlement-Duathlon-du-Pastel-2019.pdf'>Télécharger version pdf</a>
+                        <embed src=http://triathlonclubdulauragais.fr/wp-content/uploads/2019/02/Règlement-Duathlon-du-Pastel-2019.pdf width="100%" height="700px" type='application/pdf' />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-md-center">
+                        <button type="button" class="btn  btn-lg btn-primary disabled" data-dismiss="modal">En ligne</button>
+                        <a class="btn  btn-lg btn-secondary" href='http://triathlonclubdulauragais.fr/wp-content/uploads/2019/02/Bulletin-Duathlon-du-Pastel-2019.pdf'>Bulletin d'inscription</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -4,28 +4,75 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>tenues</title>
+    <title>Gallery</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+        });
+
+        $(".zoom").hover(function() {
+
+            $(this).addClass('transition');
+        }, function() {
+
+            $(this).removeClass('transition');
+        });
+    });
+    </script>
 </head>
 
 <body>
-    <section id="tenues">
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col align-self-center">
-                    <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/08/trifonction-300x184.jpeg" alt="" width="300" height="184" class="alignnone size-medium wp-image-374" />
+    <section id="gallery">
+        <!-- Page Content -->
+        <div class="container page-top">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/03/BAT8369-B2-CYCLO-LAURAGAIS-Cuissard-Premium-2-01-1.jpg" class="fancybox" rel="ligthbox">
+                        <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/03/BAT8369-B2-CYCLO-LAURAGAIS-Cuissard-Premium-2-01-1.jpg" class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/03/IMG_9621.jpg" class="fancybox" rel="ligthbox">
+                        <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/03/IMG_9621.jpg" class="zoom img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/03/BAT8369-B1-CYCLO-LAURAGAIS-Maillot-Coursier-01.jpg" class="fancybox" rel="ligthbox">
+                        <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/03/BAT8369-B1-CYCLO-LAURAGAIS-Maillot-Coursier-01.jpg" class="zoom img-fluid " alt="">
+                    </a>
                 </div>
             </div>
-            <div class="row justify-content-md-center">
-                <div class="col align-self-center">
-                    <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/08/bikesuit-300x216.jpeg" alt="" width="300" height="216" class="alignnone size-medium wp-image-373" />
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/03/BAT8369-B2-CYCLO-LAURAGAIS-Cuissard-Premium-2-01.jpg" class="fancybox" rel="ligthbox">
+                        <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2019/03/BAT8369-B2-CYCLO-LAURAGAIS-Cuissard-Premium-2-01.jpg" class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/08/bikesuit-300x216.jpeg" class="fancybox" rel="ligthbox">
+                        <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/08/bikesuit-300x216.jpeg" class="zoom img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/08/shirt-300x297.jpg" class="fancybox" rel="ligthbox">
+                        <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/08/shirt-300x297.jpg" class="zoom img-fluid " alt="">
+                    </a>
                 </div>
             </div>
-            <div class="row justify-content-md-center">
-                <div class="col align-self-center">
-                    <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/08/shirt-300x297.jpg" alt="" width="300" height="297" class="alignnone size-medium wp-image-372" />
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/08/trifonction-300x184.jpeg" class="fancybox" rel="ligthbox">
+                        <img src="http://triathlonclubdulauragais.fr/wp-content/uploads/2018/08/trifonction-300x184.jpeg" class="zoom img-fluid " alt="">
+                    </a>
                 </div>
             </div>
         </div>
